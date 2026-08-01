@@ -290,11 +290,25 @@ footer a{color:var(--gold);}
     <div class="header-top-inner">
       <a href="#top" class="brand">
         <svg width="34" height="34" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="SwitchPath logo" role="img" style="vertical-align:middle">
-  <defs><linearGradient id="sp-lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D9A84A"/><stop offset="50%" stop-color="#C9952A"/><stop offset="100%" stop-color="#9A7016"/></linearGradient></defs>
-  <circle cx="32" cy="32" r="28" fill="#1A1208" stroke="url(#sp-lg)" stroke-width="2.5"/>
-  <circle cx="32" cy="32" r="21" fill="none" stroke="url(#sp-lg)" stroke-width="1.2" strokeOpacity="0.55"/>
-  <path d="M32 14v24M32 38L22 28M32 38l10-10M18 42h28" stroke="url(#sp-lg)" stroke-width="2.4" strokeLinecap="round" strokeLinejoin="round"/>
-  <circle cx="32" cy="48" r="2.2" fill="url(#sp-lg)"/>
+  <defs>
+    <linearGradient id="sp-lg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9952A"/>
+      <stop offset="50%" stop-color="#A67C2E"/>
+      <stop offset="100%" stop-color="#8B5E1A"/>
+    </linearGradient>
+    <filter id="sp-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <polygon points="32,4 56,18 56,46 32,60 8,46 8,18" fill="#080812" stroke="url(#sp-lg)" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="32,12 49,21 49,43 32,52 15,43 15,21" fill="none" stroke="url(#sp-lg)" stroke-width="1.2" stroke-opacity="0.55" stroke-linejoin="round"/>
+  <text x="32" y="38" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="18" letter-spacing="0.5" fill="url(#sp-lg)" filter="url(#sp-glow)">SP</text>
+  <circle cx="32" cy="9" r="1.6" fill="url(#sp-lg)"/>
+  <circle cx="32" cy="55" r="1.6" fill="url(#sp-lg)"/>
 </svg>
         <span class="brand-text">SwitchPath<small>Career Change Roadmaps</small></span>
       </a>
