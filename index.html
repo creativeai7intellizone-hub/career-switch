@@ -42,7 +42,6 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Serif+Pro:wght@400;600&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
@@ -286,6 +285,8 @@ footer a{color:var(--gold);}
 @media (min-width:821px){
   #hero-canvas-wrap{height:230px;}
 }
+.resource-list .board-link{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px dotted var(--accent);}
+.resource-list .board-link:hover{color:var(--gold);border-color:var(--gold);}
 </style>
 <script type="text/javascript">
   var vglnk = {key: 'a93c86e829cfc02542089fc19f9680da'};
@@ -432,7 +433,7 @@ footer a{color:var(--gold);}
   <section id="resources-section">
     <div class="section-title"><h2>Resources</h2><div class="rule"></div></div>
     <p style="font-family:'Roboto',sans-serif;font-size:.88rem;color:#5c5240;">Every career card above includes its own free resource, paid course, bootcamp link, and job boards. Use the filter bar to jump straight to a category, or take the quiz above if you're not sure where to start.</p>
-<section class="resource-list" style="--bg:#1A1208; --page:#F9F6EF; --surface:#FDFAF4; --accent:#2B4C8C; --gold:#C9952A; --green:#1A6B3A; --red:#8B1A1A; --border:#D5C9A8; font-family:'Roboto',sans-serif; color:var(--bg);">
+<section class="courses-grid" style="--bg:#1A1208; --page:#F9F6EF; --surface:#FDFAF4; --accent:#2B4C8C; --gold:#C9952A; --green:#1A6B3A; --red:#8B1A1A; --border:#D5C9A8; font-family:'Roboto',sans-serif; color:var(--bg);">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <h3 style="font-family:'Playfair Display',serif; color:var(--accent); font-size:1.2rem; margin:0 0 6px;">Official Courses &amp; Training</h3>
   <p style="font-family:'Roboto',sans-serif; font-size:.8rem; color:#5c5240; margin:0 0 14px;">Direct links to official course platforms and certifications for every career path.</p>
@@ -589,103 +590,103 @@ const CAREERS = [
 {id:'cyber',cat:'tech',icon:'🔒',title:'Cybersecurity Specialist',desc:'Protect networks and data from attackers — one of the fastest-growing, highest-paying entry paths in tech.',
  months:[6,18],salary:{entry:65,mid:85,senior:115},difficulty:3,remote:true,demand:'high',costMin:800,costMax:2000,
  roadmap:[{step:'CompTIA A+ certification',dur:'2 mo',cost:'$500 exam'},{step:'CompTIA Network+',dur:'2 mo',cost:'$500 exam'},{step:'CompTIA Security+',dur:'2 mo',cost:'$500 exam'},{step:'Entry-level SOC analyst role',dur:'apply',cost:'—'}],
- free:{name:'Professor Messer free video courses',url:'#'},paid:{name:'Springboard Cybersecurity Bootcamp',url:'#'},boards:['Indeed','LinkedIn','Dice'],reddit:'r/cybersecurity'},
+ free:{name:'Professor Messer free video courses',url:'https://www.professormesser.com/'},paid:{name:'Springboard Cybersecurity Bootcamp',url:'https://www.springboard.com/landing/cybersecurity-bootcamp/'},boards:['Indeed','LinkedIn','Dice'],reddit:'r/cybersecurity'},
 {id:'ux',cat:'tech',icon:'🎨',title:'UX/UI Designer',desc:'Design digital products people love to use — strong path for visually-minded career switchers from any background.',
  months:[4,9],salary:{entry:60,mid:82,senior:110},difficulty:2,remote:true,demand:'high',costMin:300,costMax:1500,
  roadmap:[{step:'UX fundamentals course',dur:'6 wk',cost:'$0–200'},{step:'Learn Figma',dur:'4 wk',cost:'$0'},{step:'Build 3 case-study projects',dur:'8 wk',cost:'$0'},{step:'Apply with portfolio',dur:'apply',cost:'—'}],
- free:{name:'Google UX Design (audit) on Coursera',url:'#'},paid:{name:'CareerFoundry UX Bootcamp',url:'#'},boards:['LinkedIn','Dribbble Jobs','We Work Remotely'],reddit:'r/UXDesign'},
+ free:{name:'Google UX Design (audit) on Coursera',url:'https://www.coursera.org/professional-certificates/google-ux-design'},paid:{name:'CareerFoundry UX Bootcamp',url:'https://careerfoundry.com/en/'},boards:['LinkedIn','Dribbble Jobs','We Work Remotely'],reddit:'r/UXDesign'},
 {id:'data',cat:'tech',icon:'📊',title:'Data Analyst',desc:'Turn spreadsheets and databases into decisions — Excel → SQL → Python is the classic path in.',
  months:[4,10],salary:{entry:58,mid:80,senior:105},difficulty:3,remote:true,demand:'high',costMin:0,costMax:1200,
  roadmap:[{step:'Advanced Excel',dur:'3 wk',cost:'$0'},{step:'SQL fundamentals',dur:'5 wk',cost:'$0–100'},{step:'Python for data + Pandas',dur:'8 wk',cost:'$0–200'},{step:'Build a portfolio dashboard',dur:'3 wk',cost:'$0'}],
- free:{name:'Google Data Analytics (audit)',url:'#'},paid:{name:'DataCamp Data Analyst Track',url:'#'},boards:['Indeed','LinkedIn','Analytics Jobs'],reddit:'r/dataanalysis'},
+ free:{name:'Google Data Analytics (audit)',url:'https://www.coursera.org/professional-certificates/google-data-analytics'},paid:{name:'DataCamp Data Analyst Track',url:'https://www.datacamp.com/tracks/data-analyst'},boards:['Indeed','LinkedIn','Analytics Jobs'],reddit:'r/dataanalysis'},
 {id:'webdev',cat:'tech',icon:'💻',title:'Web Developer',desc:'HTML → CSS → JS → React — the most self-teachable tech career, with the largest freelance market.',
  months:[6,12],salary:{entry:62,mid:88,senior:120},difficulty:3,remote:true,demand:'high',costMin:0,costMax:2000,
  roadmap:[{step:'HTML & CSS',dur:'4 wk',cost:'$0'},{step:'JavaScript fundamentals',dur:'8 wk',cost:'$0'},{step:'React + build 3 projects',dur:'8 wk',cost:'$0'},{step:'Apply / freelance first clients',dur:'apply',cost:'—'}],
- free:{name:'freeCodeCamp full curriculum',url:'#'},paid:{name:'App Academy Web Dev Bootcamp',url:'#'},boards:['Indeed','LinkedIn','RemoteOK'],reddit:'r/webdev'},
+ free:{name:'freeCodeCamp full curriculum',url:'https://www.freecodecamp.org/learn/'},paid:{name:'App Academy Web Dev Bootcamp',url:'https://www.appacademy.io/'},boards:['Indeed','LinkedIn','RemoteOK'],reddit:'r/webdev'},
 {id:'cloud',cat:'tech',icon:'☁️',title:'Cloud Engineer',desc:'AWS-certified cloud roles are among the highest-paid entry points in tech right now.',
  months:[5,12],salary:{entry:68,mid:95,senior:130},difficulty:4,remote:true,demand:'high',costMin:500,costMax:1800,
  roadmap:[{step:'AWS Cloud Practitioner cert',dur:'6 wk',cost:'$100 exam'},{step:'AWS Solutions Architect Associate',dur:'10 wk',cost:'$150 exam'},{step:'Hands-on labs project',dur:'6 wk',cost:'$0–100'},{step:'Apply for junior cloud role',dur:'apply',cost:'—'}],
- free:{name:'AWS Skill Builder free tier',url:'#'},paid:{name:'A Cloud Guru AWS Path',url:'#'},boards:['Indeed','LinkedIn','Dice'],reddit:'r/aws'},
+ free:{name:'AWS Skill Builder free tier',url:'https://skillbuilder.aws/'},paid:{name:'A Cloud Guru AWS Path',url:'https://acloudguru.com/'},boards:['Indeed','LinkedIn','Dice'],reddit:'r/aws'},
 {id:'pm',cat:'tech',icon:'📋',title:'Project Manager (PMP)',desc:'Coordinate teams and delivery — a transferable path for anyone with organizational experience.',
  months:[4,8],salary:{entry:64,mid:88,senior:118},difficulty:2,remote:true,demand:'medium',costMin:400,costMax:1500,
  roadmap:[{step:'PMP eligibility (experience hours)',dur:'varies',cost:'$0'},{step:'PMP exam prep course',dur:'8 wk',cost:'$400 course'},{step:'Sit the PMP exam',dur:'1 day',cost:'$405 exam'},{step:'Apply for PM roles',dur:'apply',cost:'—'}],
- free:{name:'PMI free resource hub',url:'#'},paid:{name:'PM PrepCast PMP Course',url:'#'},boards:['LinkedIn','Indeed'],reddit:'r/projectmanagement'},
+ free:{name:'PMI free resource hub',url:'https://www.pmi.org/'},paid:{name:'PM PrepCast PMP Course',url:'https://www.project-management-prepcast.com/'},boards:['LinkedIn','Indeed'],reddit:'r/projectmanagement'},
 {id:'itsupport',cat:'tech',icon:'🖥️',title:'IT Support Specialist',desc:'The fastest, lowest-cost entry point into tech — a springboard into cybersecurity or cloud later.',
  months:[2,5],salary:{entry:45,mid:60,senior:80},difficulty:1,remote:false,demand:'high',costMin:200,costMax:600,
  roadmap:[{step:'CompTIA A+ certification',dur:'8 wk',cost:'$500 exam'},{step:'Practice help-desk scenarios',dur:'2 wk',cost:'$0'},{step:'Apply for help-desk / IT support roles',dur:'apply',cost:'—'}],
- free:{name:'Professor Messer A+ videos',url:'#'},paid:{name:'CompTIA A+ CertMaster',url:'#'},boards:['Indeed','LinkedIn'],reddit:'r/ITCareerQuestions'},
+ free:{name:'Professor Messer A+ videos',url:'https://www.professormesser.com/'},paid:{name:'CompTIA A+ CertMaster',url:'https://www.comptia.org/training/certmaster'},boards:['Indeed','LinkedIn'],reddit:'r/ITCareerQuestions'},
 {id:'rn',cat:'healthcare',icon:'🩺',title:'Registered Nurse (RN)',desc:'The most-searched healthcare career switch — stable demand across every US state and the UK.',
  months:[18,36],salary:{entry:60,mid:78,senior:105},difficulty:4,remote:false,demand:'high',costMin:6000,costMax:40000,
  roadmap:[{step:'Prerequisite courses',dur:'6 mo',cost:'$1,500'},{step:'Accelerated BSN or ADN program',dur:'18–24 mo',cost:'$15,000–35,000'},{step:'Pass NCLEX-RN licensing exam',dur:'1 mo prep',cost:'$200 exam'},{step:'Apply for RN positions',dur:'apply',cost:'—'}],
- free:{name:'Khan Academy anatomy & physiology',url:'#'},paid:{name:'Accelerated BSN program directory',url:'#'},boards:['Indeed','Nurse.com','LinkedIn'],reddit:'r/StudentNurse'},
+ free:{name:'Khan Academy anatomy & physiology',url:'https://www.khanacademy.org/science/health-and-medicine/human-anatomy-and-physiology'},paid:{name:'Accelerated BSN program directory',url:'https://www.aacnnursing.org/'},boards:['Indeed','Nurse.com','LinkedIn'],reddit:'r/StudentNurse'},
 {id:'medcoder',cat:'healthcare',icon:'📁',title:'Medical Coder',desc:'Remote-friendly healthcare role — translate patient charts into billing codes, no clinical training needed.',
  months:[4,6],salary:{entry:42,mid:55,senior:70},difficulty:2,remote:true,demand:'medium',costMin:1200,costMax:2500,
  roadmap:[{step:'Medical coding certificate program',dur:'4 mo',cost:'$1,500'},{step:'Pass CPC certification exam',dur:'1 mo',cost:'$400 exam'},{step:'Apply for remote coding roles',dur:'apply',cost:'—'}],
- free:{name:'AAPC free intro webinars',url:'#'},paid:{name:'AAPC CPC Certification Course',url:'#'},boards:['Indeed','FlexJobs','Nurse.com'],reddit:'r/CodingandBilling'},
+ free:{name:'AAPC free intro webinars',url:'https://www.aapc.com/'},paid:{name:'AAPC CPC Certification Course',url:'https://www.aapc.com/'},boards:['Indeed','FlexJobs','Nurse.com'],reddit:'r/CodingandBilling'},
 {id:'dentalhyg',cat:'healthcare',icon:'🦷',title:'Dental Hygienist',desc:'High pay-to-training-time ratio in healthcare — associate degree, strong job security.',
  months:[22,26],salary:{entry:65,mid:80,senior:100},difficulty:3,remote:false,demand:'medium',costMin:10000,costMax:30000,
  roadmap:[{step:'Prerequisite science courses',dur:'6 mo',cost:'$1,200'},{step:'Accredited dental hygiene program',dur:'22 mo',cost:'$18,000'},{step:'Pass national + state board exams',dur:'1 mo',cost:'$500'},{step:'Apply for hygienist roles',dur:'apply',cost:'—'}],
- free:{name:'ADHA career resource hub',url:'#'},paid:{name:'CODA-accredited program directory',url:'#'},boards:['Indeed','ADHA Job Board'],reddit:'r/DentalHygiene'},
+ free:{name:'ADHA career resource hub',url:'https://www.adha.org/'},paid:{name:'CODA-accredited program directory',url:'https://coda.ada.org/'},boards:['Indeed','ADHA Job Board'],reddit:'r/DentalHygiene'},
 {id:'ptaide',cat:'healthcare',icon:'🦵',title:'Physical Therapy Aide',desc:'Low-barrier entry into healthcare, and a common stepping stone toward PT school.',
  months:[1,3],salary:{entry:32,mid:40,senior:48},difficulty:1,remote:false,demand:'medium',costMin:0,costMax:500,
  roadmap:[{step:'On-the-job training (most clinics)',dur:'2–4 wk',cost:'$0'},{step:'Optional aide certificate course',dur:'4 wk',cost:'$300'},{step:'Apply to outpatient clinics',dur:'apply',cost:'—'}],
- free:{name:'APTA career overview',url:'#'},paid:{name:'PT Aide certificate course',url:'#'},boards:['Indeed','LinkedIn'],reddit:'r/physicaltherapy'},
+ free:{name:'APTA career overview',url:'https://www.apta.org/'},paid:{name:'PT Aide certificate course',url:'https://www.ashworthcollege.edu/'},boards:['Indeed','LinkedIn'],reddit:'r/physicaltherapy'},
 {id:'healthadmin',cat:'healthcare',icon:'🏥',title:'Healthcare Administrator',desc:'Manage the business side of clinics and hospitals — good fit for career switchers with office/management experience.',
  months:[6,18],salary:{entry:55,mid:75,senior:105},difficulty:3,remote:false,demand:'medium',costMin:2000,costMax:20000,
  roadmap:[{step:'Healthcare admin certificate or bachelor\u2019s',dur:'6–18 mo',cost:'$2,000–18,000'},{step:'Internship or entry admin role',dur:'3 mo',cost:'$0'},{step:'Apply for office/practice manager roles',dur:'apply',cost:'—'}],
- free:{name:'ACHE free student resources',url:'#'},paid:{name:'Healthcare Admin certificate programs',url:'#'},boards:['Indeed','LinkedIn'],reddit:'r/healthcareadministration'},
+ free:{name:'ACHE free student resources',url:'https://www.ache.org/'},paid:{name:'Healthcare Admin certificate programs',url:'https://www.ache.org/'},boards:['Indeed','LinkedIn'],reddit:'r/healthcareadministration'},
 {id:'electrician',cat:'trade',icon:'⚡',title:'Electrician',desc:'Paid apprenticeship — earn while you learn, with strong shortage-driven demand across the US and UK.',
  months:[24,48],salary:{entry:50,mid:75,senior:95},difficulty:3,remote:false,demand:'high',costMin:0,costMax:2000,
  roadmap:[{step:'Apply to a paid apprenticeship (IBEW etc.)',dur:'apply',cost:'$0'},{step:'4-year apprenticeship (paid, on-the-job + classroom)',dur:'48 mo',cost:'$0–2,000'},{step:'Pass journeyman licensing exam',dur:'1 mo',cost:'$150'},{step:'Work as licensed electrician',dur:'—',cost:'—'}],
- free:{name:'IBEW apprenticeship directory',url:'#'},paid:{name:'Local trade school pre-apprentice course',url:'#'},boards:['Indeed','IBEW Local listings'],reddit:'r/electricians'},
+ free:{name:'IBEW apprenticeship directory',url:'https://www.ibew.org/'},paid:{name:'Local trade school pre-apprentice course',url:'https://www.njatc.org/'},boards:['Indeed','IBEW Local listings'],reddit:'r/electricians'},
 {id:'plumber',cat:'trade',icon:'🔧',title:'Plumber',desc:'Massive shortage across the US and UK — paid apprenticeships and steady six-figure ceiling for masters.',
  months:[24,48],salary:{entry:48,mid:72,senior:100},difficulty:3,remote:false,demand:'high',costMin:0,costMax:2000,
  roadmap:[{step:'Apply to a plumbing apprenticeship',dur:'apply',cost:'$0'},{step:'4-year paid apprenticeship',dur:'48 mo',cost:'$0–2,000'},{step:'Pass journeyman license exam',dur:'1 mo',cost:'$150'},{step:'Work toward master plumber license',dur:'2+ yr',cost:'varies'}],
- free:{name:'UA plumbers union apprenticeship info',url:'#'},paid:{name:'Trade school plumbing prep course',url:'#'},boards:['Indeed','Local union job boards'],reddit:'r/Plumbing'},
+ free:{name:'UA plumbers union apprenticeship info',url:'https://www.unitedassociation.org/'},paid:{name:'Trade school plumbing prep course',url:'https://www.ed2go.com/'},boards:['Indeed','Local union job boards'],reddit:'r/Plumbing'},
 {id:'hvac',cat:'trade',icon:'🌡️',title:'HVAC Technician',desc:'Fast certificate-based entry (6–12 months) into a trade with year-round demand.',
  months:[6,12],salary:{entry:45,mid:65,senior:88},difficulty:2,remote:false,demand:'high',costMin:1500,costMax:6000,
  roadmap:[{step:'HVAC certificate program',dur:'6–12 mo',cost:'$4,000'},{step:'EPA 608 certification',dur:'2 wk',cost:'$150'},{step:'Entry-level technician role / apprenticeship',dur:'apply',cost:'—'}],
- free:{name:'EPA 608 free study guide',url:'#'},paid:{name:'Community college HVAC certificate',url:'#'},boards:['Indeed','ACCA job board'],reddit:'r/hvacadvice'},
+ free:{name:'EPA 608 free study guide',url:'https://www.epa.gov/'},paid:{name:'Community college HVAC certificate',url:'https://www.escoinst.com/'},boards:['Indeed','ACCA job board'],reddit:'r/hvacadvice'},
 {id:'welder',cat:'trade',icon:'🔥',title:'Welder',desc:'Shortage-driven trade with fast certificate training and strong overtime/travel pay potential.',
  months:[6,12],salary:{entry:42,mid:60,senior:85},difficulty:2,remote:false,demand:'high',costMin:2000,costMax:8000,
  roadmap:[{step:'Welding certificate program',dur:'6–9 mo',cost:'$5,000'},{step:'AWS certification exam',dur:'1 wk',cost:'$200'},{step:'Entry-level welding job / apprenticeship',dur:'apply',cost:'—'}],
- free:{name:'AWS free welding resource hub',url:'#'},paid:{name:'Community college welding certificate',url:'#'},boards:['Indeed','Welding job board'],reddit:'r/Welding'},
+ free:{name:'AWS free welding resource hub',url:'https://www.aws.org/'},paid:{name:'Community college welding certificate',url:'https://www.aws.org/certifications/'},boards:['Indeed','Welding job board'],reddit:'r/Welding'},
 {id:'bookkeeping',cat:'business',icon:'🧾',title:'Bookkeeper / Accountant Track',desc:'QuickBooks-certified bookkeeping is one of the fastest remote-friendly business pivots available.',
  months:[3,6],salary:{entry:45,mid:60,senior:80},difficulty:2,remote:true,demand:'medium',costMin:0,costMax:1000,
  roadmap:[{step:'QuickBooks Online certification',dur:'4 wk',cost:'$0–200'},{step:'Bookkeeping fundamentals course',dur:'6 wk',cost:'$0–300'},{step:'Land first 2–3 small-business clients',dur:'8 wk',cost:'$0'}],
- free:{name:'Intuit QuickBooks free training',url:'#'},paid:{name:'Bookkeeper Launch course',url:'#'},boards:['Upwork','Indeed','LinkedIn'],reddit:'r/Bookkeeping'},
+ free:{name:'Intuit QuickBooks free training',url:'https://quickbooks.intuit.com/learn-support/'},paid:{name:'Bookkeeper Launch course',url:'https://www.bookkeeperlaunch.com/'},boards:['Upwork','Indeed','LinkedIn'],reddit:'r/Bookkeeping'},
 {id:'digitalmarketing',cat:'business',icon:'📈',title:'Digital Marketer',desc:'Google Ads and Meta Ads certifications open freelance and agency doors fast.',
  months:[3,6],salary:{entry:48,mid:68,senior:95},difficulty:2,remote:true,demand:'medium',costMin:0,costMax:800,
  roadmap:[{step:'Google Ads certification',dur:'3 wk',cost:'$0'},{step:'Meta Blueprint certification',dur:'3 wk',cost:'$0'},{step:'Build 2–3 case-study campaigns',dur:'6 wk',cost:'$100–300'},{step:'Apply / freelance first clients',dur:'apply',cost:'—'}],
- free:{name:'Google Skillshop (free certifications)',url:'#'},paid:{name:'Meta Blueprint course bundle',url:'#'},boards:['Upwork','LinkedIn','Indeed'],reddit:'r/PPC'},
+ free:{name:'Google Skillshop (free certifications)',url:'https://skillshop.withgoogle.com/'},paid:{name:'Meta Blueprint course bundle',url:'https://www.facebook.com/business/learn'},boards:['Upwork','LinkedIn','Indeed'],reddit:'r/PPC'},
 {id:'realestate',cat:'business',icon:'🏠',title:'Real Estate Agent',desc:'State-licensed path with uncapped commission upside — one of the most common mid-career pivots.',
  months:[3,6],salary:{entry:40,mid:65,senior:120},difficulty:2,remote:false,demand:'medium',costMin:500,costMax:1500,
  roadmap:[{step:'State-required pre-licensing course',dur:'6–12 wk',cost:'$400'},{step:'Pass state real estate exam',dur:'1 mo',cost:'$100'},{step:'Join a brokerage',dur:'apply',cost:'$0–500'},{step:'Close first transactions',dur:'ongoing',cost:'—'}],
- free:{name:'State real estate commission resources',url:'#'},paid:{name:'Pre-licensing course provider',url:'#'},boards:['Indeed','Realtor.com careers'],reddit:'r/realtors'},
+ free:{name:'State real estate commission resources',url:'https://www.nar.realtor/'},paid:{name:'Pre-licensing course provider',url:'https://www.colibrirealestate.com/'},boards:['Indeed','Realtor.com careers'],reddit:'r/realtors'},
 {id:'insurance',cat:'business',icon:'🛡️',title:'Insurance Agent',desc:'Licensed path with residual commission income — strong for people-oriented career switchers.',
  months:[2,4],salary:{entry:42,mid:62,senior:100},difficulty:1,remote:true,demand:'medium',costMin:200,costMax:800,
  roadmap:[{step:'State insurance pre-licensing course',dur:'4 wk',cost:'$300'},{step:'Pass state licensing exam',dur:'1 wk',cost:'$100'},{step:'Join an agency or go independent',dur:'apply',cost:'$0–400'}],
- free:{name:'State insurance department resources',url:'#'},paid:{name:'Pre-licensing exam prep course',url:'#'},boards:['Indeed','LinkedIn'],reddit:'r/InsuranceAgent'},
+ free:{name:'State insurance department resources',url:'https://content.naic.org/'},paid:{name:'Pre-licensing exam prep course',url:'https://www.examfx.com/'},boards:['Indeed','LinkedIn'],reddit:'r/InsuranceAgent'},
 {id:'solar',cat:'trade',icon:'☀️',title:'Solar Panel Installer',desc:'One of the fastest-growing trades in the US — short certificate training, strong climate-driven demand.',
  months:[2,6],salary:{entry:40,mid:58,senior:78},difficulty:2,remote:false,demand:'high',costMin:500,costMax:3000,
  roadmap:[{step:'Solar installer certificate (NABCEP prep)',dur:'8 wk',cost:'$1,500'},{step:'OSHA 10 safety certification',dur:'1 wk',cost:'$100'},{step:'Entry-level installer role',dur:'apply',cost:'—'}],
- free:{name:'NABCEP free study resources',url:'#'},paid:{name:'Solar installer certificate program',url:'#'},boards:['Indeed','SolarJobs.com'],reddit:'r/solar'},
+ free:{name:'NABCEP free study resources',url:'https://www.nabcep.org/'},paid:{name:'Solar installer certificate program',url:'https://www.nabcep.org/certifications/'},boards:['Indeed','SolarJobs.com'],reddit:'r/solar'},
 {id:'pharmtech',cat:'healthcare',icon:'💊',title:'Pharmacy Technician',desc:'One of the shortest healthcare certificate paths — steady demand in retail and hospital pharmacies.',
  months:[3,6],salary:{entry:36,mid:46,senior:58},difficulty:1,remote:false,demand:'medium',costMin:800,costMax:2500,
  roadmap:[{step:'Pharmacy technician certificate program',dur:'4 mo',cost:'$1,500'},{step:'Pass PTCB certification exam',dur:'2 wk',cost:'$150'},{step:'Apply for retail/hospital pharmacy roles',dur:'apply',cost:'—'}],
- free:{name:'PTCB free practice exams',url:'#'},paid:{name:'Pharmacy tech certificate program',url:'#'},boards:['Indeed','LinkedIn'],reddit:'r/PharmacyTechnician'},
+ free:{name:'PTCB free practice exams',url:'https://www.ptcb.org/'},paid:{name:'Pharmacy tech certificate program',url:'https://www.nhanow.com/pharmacy-technician'},boards:['Indeed','LinkedIn'],reddit:'r/PharmacyTechnician'},
 {id:'writer',cat:'creative',icon:'✍️',title:'Freelance Writer',desc:'Zero-cost entry into a portable, remote-first creative career — build a portfolio and pitch clients directly.',
  months:[2,5],salary:{entry:35,mid:55,senior:90},difficulty:2,remote:true,demand:'medium',costMin:0,costMax:300,
  roadmap:[{step:'Build 3–5 writing samples',dur:'3 wk',cost:'$0'},{step:'Set up portfolio site',dur:'1 wk',cost:'$0–100'},{step:'Pitch first 20 clients',dur:'4 wk',cost:'$0'},{step:'Land recurring clients',dur:'ongoing',cost:'—'}],
- free:{name:'The Write Life free resources',url:'#'},paid:{name:'Freelance Writing Course (paid)',url:'#'},boards:['Upwork','ProBlogger jobs','Contena'],reddit:'r/freelanceWriters'},
+ free:{name:'The Write Life free resources',url:'https://thewritelife.com/'},paid:{name:'Freelance Writing Course (paid)',url:'https://www.linkedin.com/learning/'},boards:['Upwork','ProBlogger jobs','Contena'],reddit:'r/freelanceWriters'},
 {id:'graphicdesign',cat:'creative',icon:'🖌️',title:'Graphic Designer',desc:'Learn from scratch with free tools — a fast, visual, portfolio-driven creative pivot.',
  months:[4,8],salary:{entry:40,mid:60,senior:85},difficulty:2,remote:true,demand:'medium',costMin:0,costMax:800,
  roadmap:[{step:'Learn design fundamentals + Canva/Figma',dur:'6 wk',cost:'$0'},{step:'Learn Adobe Illustrator/Photoshop',dur:'8 wk',cost:'$20/mo'},{step:'Build a 10-piece portfolio',dur:'6 wk',cost:'$0'},{step:'Freelance or apply for junior roles',dur:'apply',cost:'—'}],
- free:{name:'Canva Design School (free)',url:'#'},paid:{name:'Adobe Creative Cloud + course bundle',url:'#'},boards:['Upwork','Dribbble Jobs','Indeed'],reddit:'r/graphic_design'},
+ free:{name:'Canva Design School (free)',url:'https://www.canva.com/learn/'},paid:{name:'Adobe Creative Cloud + course bundle',url:'https://www.adobe.com/creativecloud.html'},boards:['Upwork','Dribbble Jobs','Indeed'],reddit:'r/graphic_design'},
 {id:'videoeditor',cat:'creative',icon:'🎬',title:'Video Editor',desc:'YouTube and TikTok demand has made this one of the fastest-growing freelance creative paths.',
  months:[3,7],salary:{entry:38,mid:58,senior:90},difficulty:2,remote:true,demand:'high',costMin:0,costMax:600,
  roadmap:[{step:'Learn Premiere Pro or DaVinci Resolve',dur:'6 wk',cost:'$0–200'},{step:'Edit 5 practice/spec projects',dur:'6 wk',cost:'$0'},{step:'Build a demo reel',dur:'2 wk',cost:'$0'},{step:'Pitch YouTubers / agencies',dur:'ongoing',cost:'—'}],
- free:{name:'DaVinci Resolve (free software) + YouTube tutorials',url:'#'},paid:{name:'Premiere Pro editing course',url:'#'},boards:['Upwork','ProductionHUB','Indeed'],reddit:'r/VideoEditing'}
+ free:{name:'DaVinci Resolve (free software) + YouTube tutorials',url:'https://www.blackmagicdesign.com/products/davinciresolve'},paid:{name:'Premiere Pro editing course',url:'https://www.adobe.com/products/premiere.html'},boards:['Upwork','ProductionHUB','Indeed'],reddit:'r/VideoEditing'}
 ];
 
 /* ============ RENDER CAREER CARDS ============ */
@@ -742,8 +743,8 @@ function renderCareers(filter){
         <div class="resource-list">
           <div><span>🔗 Free resource</span><a href="${c.free.url}" target="_blank" rel="noopener" data-tip="100% free — no credit card required">${escHtml(c.free.name)}</a></div>
           <div><span>🎓 Bootcamp/course</span><a href="${c.paid.url}" target="_blank" rel="noopener" data-affiliate="true" data-tip="External link — we may earn a referral fee">${escHtml(c.paid.name)}</a></div>
-          <div><span>💼 Job boards</span><span>${c.boards.map(b=>escHtml(b)).join(', ')}</span></div>
-          <div><span>💬 Community</span><span>${escHtml(c.reddit)}</span></div>
+          <div><span>💼 Job boards</span><span class="boards-row">${c.boards.map(b=>boardLink(b)).join(' · ')}</span></div>
+          <div><span>💬 Community</span><span><a href="https://www.reddit.com/${c.reddit}/" target="_blank" rel="noopener" class="board-link">${escHtml(c.reddit)}</a></span></div>
         </div>
         <div class="cc-actions">
           <button class="primary" data-tip="Download your personalized plan" onclick="printRoadmap('${c.id}')">📋 Get Roadmap PDF</button>
@@ -1088,7 +1089,11 @@ function jumpToCareer(id){
     const d = document.getElementById('detail-'+id);
     if(d && !d.classList.contains('open')) toggleDetail(id);
   } else {
-    renderCareers('all');
+    
+const BOARD_URLS={'Indeed':'https://www.indeed.com/','LinkedIn':'https://www.linkedin.com/jobs/','Dice':'https://www.dice.com/','Dribbble Jobs':'https://dribbble.com/jobs','We Work Remotely':'https://weworkremotely.com/','Upwork':'https://www.upwork.com/','FlexJobs':'https://www.flexjobs.com/','RemoteOK':'https://remoteok.com/','Contena':'https://www.contena.co/','ProBlogger jobs':'https://problogger.com/jobs/','ProductionHUB':'https://www.productionhub.com/','Nurse.com':'https://www.nurse.com/','Analytics Jobs':'https://www.analyticsjobs.com/','SolarJobs.com':'https://www.solarjobs.com/','Realtor.com careers':'https://www.realtor.com/','Welding job board':'https://www.aws.org/','ACCA job board':'https://www.accaglobal.com/','ADHA Job Board':'https://www.adha.org/','IBEW Local listings':'https://www.ibew.org/','Local union job boards':'https://www.unitedassociation.org/'};
+function boardLink(name){var u=BOARD_URLS[name];return u?'<a href="'+u+'" target="_blank" rel="noopener" class="board-link">'+escHtml(name)+'</a>':escHtml(name);}
+
+renderCareers('all');
     setTimeout(()=>jumpToCareer(id), 150);
   }
 }
