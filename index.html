@@ -1089,11 +1089,7 @@ function jumpToCareer(id){
     const d = document.getElementById('detail-'+id);
     if(d && !d.classList.contains('open')) toggleDetail(id);
   } else {
-    
-const BOARD_URLS={'Indeed':'https://www.indeed.com/','LinkedIn':'https://www.linkedin.com/jobs/','Dice':'https://www.dice.com/','Dribbble Jobs':'https://dribbble.com/jobs','We Work Remotely':'https://weworkremotely.com/','Upwork':'https://www.upwork.com/','FlexJobs':'https://www.flexjobs.com/','RemoteOK':'https://remoteok.com/','Contena':'https://www.contena.co/','ProBlogger jobs':'https://problogger.com/jobs/','ProductionHUB':'https://www.productionhub.com/','Nurse.com':'https://www.nurse.com/','Analytics Jobs':'https://www.analyticsjobs.com/','SolarJobs.com':'https://www.solarjobs.com/','Realtor.com careers':'https://www.realtor.com/','Welding job board':'https://www.aws.org/','ACCA job board':'https://www.accaglobal.com/','ADHA Job Board':'https://www.adha.org/','IBEW Local listings':'https://www.ibew.org/','Local union job boards':'https://www.unitedassociation.org/'};
-function boardLink(name){var u=BOARD_URLS[name];return u?'<a href="'+u+'" target="_blank" rel="noopener" class="board-link">'+escHtml(name)+'</a>':escHtml(name);}
-
-renderCareers('all');
+    renderCareers('all');
     setTimeout(()=>jumpToCareer(id), 150);
   }
 }
@@ -1260,6 +1256,8 @@ function runSelfTests(){
 }
 
 /* ============ INIT ============ */
+const BOARD_URLS={'Indeed':'https://www.indeed.com/','LinkedIn':'https://www.linkedin.com/jobs/','Dice':'https://www.dice.com/','Dribbble Jobs':'https://dribbble.com/jobs','We Work Remotely':'https://weworkremotely.com/','Upwork':'https://www.upwork.com/','FlexJobs':'https://www.flexjobs.com/','RemoteOK':'https://remoteok.com/','Contena':'https://www.contena.co/','ProBlogger jobs':'https://problogger.com/jobs/','ProductionHUB':'https://www.productionhub.com/','Nurse.com':'https://www.nurse.com/','Analytics Jobs':'https://www.analyticsjobs.com/','SolarJobs.com':'https://www.solarjobs.com/','Realtor.com careers':'https://www.realtor.com/','Welding job board':'https://www.aws.org/','ACCA job board':'https://www.accaglobal.com/','ADHA Job Board':'https://www.adha.org/','IBEW Local listings':'https://www.ibew.org/','Local union job boards':'https://www.unitedassociation.org/'};
+function boardLink(name){var u=BOARD_URLS[name];return u?'<a href="'+u+'" target="_blank" rel="noopener" class="board-link">'+escHtml(name)+'</a>':escHtml(name);}
 renderCareers('all');
 populateCompareSelectors();
 renderQuizQuestion();
